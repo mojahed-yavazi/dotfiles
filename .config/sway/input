@@ -1,0 +1,13 @@
+### Keybard Input ###
+
+input type:keyboard {
+    xkb_layout us,ir
+    xkb_options grp:alt_shift_toggle,ctrl:nocaps
+
+    repeat_delay 250
+    repeat_rate 50
+}
+
+#### Scroll Speed ###
+
+input type:pointer scroll_factor 1.2

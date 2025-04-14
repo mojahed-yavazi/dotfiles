@@ -1,0 +1,114 @@
+### SwayFX Settings ##
+   
+   ## Corner ##
+
+   corner_radius 12
+
+   ## Shadows ##
+
+   shadows enable
+   shadows_on_csd enable
+   shadow_blur_radius 14
+   shadow_color #0000007F
+
+   ## BLUR ##
+
+   blur enable
+   blur_xray enable
+   blur_passes 4
+   blur_radius 1
+#   blur_noise 0.11
+   blur_noise 0.008
+#   blur_saturation 2.0
+   blur_brightness 0.99
+#   blur_contrast 0.88
+
+   ## Layer Effects ##
+ 
+   layer_effects "waybar" blur enable; blur_xray disable; blur_ignore_transparent enable; shadows enable; corner_radius 14
+   layer_effects "rofi" blur enable; blur_ignore_transparent enable; corner_radius 12
+   layer_effects "launcher" blur enable; blur_xray enable; blur_ignore_transparent enable; corner_radius 12
+   layer_effects "notifications" blur enable; blur_xray disable; blur_ignore_transparent enable; shadows disable; corner_radius 12
+   layer_effects "logout_dialog" blur enable; blur_ignore_transparent enable
+   layer_effects "gtk-layer-shell" blur enable; blur_xray enable; blur_ignore_transparent enable; shadows enable; corner_radius 12
+   layer_effects "osd" blur enable; blur_ignore_transparent enable; shadows disable; corner_radius 12
+
+### Wallpaper ###
+
+   output HDMI-A-2 bg ~/.local/share/wallpaper fill
+
+### Titlebar and border configuration ###
+
+   for_window [app_id=".*"] border pixel 2
+   default_border pixel 2
+   smart_borders off
+
+
+### Colors ###
+
+   set $rosewater #f5e0dc
+   set $flamingo #f2cdcd
+   set $pink #f5c2e7
+   set $mauve #cba6f7
+   set $red #f38ba8
+   set $maroon #eba0ac
+   set $peach #fab387
+   set $yellow #f9e2af
+   set $green #a6e3a1
+   set $teal #94e2d5
+   set $sky #89dceb
+   set $sapphire #74c7ec
+   set $blue #89b4fa
+   set $lavender #b4befe
+   set $text #cdd6f4
+   set $subtext1 #bac2de
+   set $subtext0 #a6adc8
+   set $overlay2 #9399b2
+   set $overlay1 #7f849c
+   set $overlay0 #6c7086
+   set $surface2 #585b70
+   set $surface1 #45475a
+   set $surface0 #313244
+   set $base #1e1e2e
+   set $mantle #181825
+   set $crust #11111b
+   set $transparency_hex FF
+
+   ## class                  title          bg       text      ind          border ##
+
+   client.focused            "$lavender"    "$base"  "$text"   "$mauve"     "$mauve"$transparency_hex
+   client.focused_inactive   "$overlay0"    "$base"  "$text"   "$overlay0"  "$overlay0"$transparency_hex
+   client.unfocused          "$overlay0"    "$base"  "$text"   "$overlay0"  "$overlay0"$transparency_hex
+   client.urgent             "$peach"       "$base"  "$peach"  "$overlay0"  "$peach"$transparency_hex
+   client.placeholder        "$overlay0"    "$base"  "$text"   "$overlay0"  "$overlay0"$transparency_hex
+   client.background         "$base"
+
+### Gaps ###
+
+   gaps inner 10
+   gaps outer 40
+   gaps bottom 70
+   gaps top 3
+
+### Cursor ###
+
+   set $cursor_theme catppuccin-mocha-light-cursors
+   set $cursor_size 25
+   seat seat0 xcursor_theme $cursor_theme $cursor_size
+
+### GTK ###
+
+   exec {
+       gsettings set org.gtk.Settings.FileChooser window-size '(1200, 700)'
+       gsettings set org.gnome.desktop.interface gtk-theme 'aphelion'
+       gsettings set org.gnome.desktop.interface icon-theme 'candy-icons'
+       gsettings set org.gnome.desktop.interface font-name 'Open Sans Medium 12'
+       gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
+       gsettings set org.gnome.desktop.interface cursor-size $cursor_size
+       gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+   }
+
+### Misc ###
+
+   show_marks no
+

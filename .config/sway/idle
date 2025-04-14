@@ -1,0 +1,8 @@
+### IDLE Config ###
+
+exec swayidle \
+    timeout 300 "hyprlock" \
+    timeout 400 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"'
+
+###################

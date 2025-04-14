@@ -1,0 +1,2 @@
+exec autotiling-rs
+exec_always nwg-dock -i 45 -mb 6 -nows -l bottom -r

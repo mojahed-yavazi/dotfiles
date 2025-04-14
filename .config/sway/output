@@ -1,0 +1,7 @@
+### Output ####
+
+   output HDMI-A-2 {
+       #max_render_time 22
+   }
+
+#   for_window [app_id=".*"] max_render_time 22

@@ -1,0 +1,57 @@
+### Global ###
+
+set {
+      ## Screenshot Dir ##      
+
+      $screenshots_dir ~/Pictures/Screenshots
+
+      ## Terminal emulator ##
+
+      $term foot
+
+      ## Menu ##
+
+      $menu tofi-drun --drun-launch=true
+
+      ## Power Menu ##
+
+      $power wlogout -b 4
+
+      ## Move and resize steps ##
+
+      $move_px 20
+      $resize_px 20
+
+      ## Workspace names ##
+
+      $ws1 1
+      $ws2 2
+      $ws3 3
+      $ws4 4
+      $ws5 5
+      $ws6 6
+      $ws7 7
+      $ws8 8
+      $ws9 9
+      $ws10 10
+
+      ## Misc ##
+
+      # Send tick to trigger a split indicator update.
+      # The $post_split command is added as a suffix to all split keybinds.
+
+      $post_split exec "swaymsg -t send_tick split"
+
+      # Switch to workspace (and focus any urgent clients in it, if they exist)
+      # The $post_workspace_switch command is added as a suffix to all workspace
+      # switching keybinds.
+
+      $post_workspace_switch [workspace="__focused__" urgent="first"] focus
+
+}
+
+## Bar ##
+
+      bar {
+         swaybar_command waybar
+      }

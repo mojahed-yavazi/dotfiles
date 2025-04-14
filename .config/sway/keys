@@ -1,0 +1,193 @@
+### Keys ###
+
+   ## Main mod key ##
+
+   set $mod Mod4
+
+   ## Floating Modifier ##
+
+   floating_modifier $mod normal
+
+### Global Keybinds ###
+
+   bindsym --to-code {
+
+       # Open Terminal
+
+       $mod+Return exec $term
+
+       # Open Power Menu
+
+       $mod+p exec $power
+
+       # Reload Sway
+
+       $mod+Shift+r reload
+
+       # Exit Sway
+
+       $mod+Shift+e exec "swaymsg exit"
+
+       # Lock Screen
+
+       $mod+l exec "hyprlock"
+
+       ##  Workspaces ###
+
+       # Focus workspace
+
+       $mod+1 workspace $ws1; $post_workspace_switch
+       $mod+2 workspace $ws2; $post_workspace_switch
+       $mod+3 workspace $ws3; $post_workspace_switch
+       $mod+4 workspace $ws4; $post_workspace_switch
+       $mod+5 workspace $ws5; $post_workspace_switch
+       $mod+6 workspace $ws6; $post_workspace_switch
+       $mod+7 workspace $ws7; $post_workspace_switch
+       $mod+8 workspace $ws8; $post_workspace_switch
+       $mod+9 workspace $ws9; $post_workspace_switch
+       $mod+0 workspace $ws10; $post_workspace_switch
+
+       # Switch Workspaces #
+
+       $mod+Prior workspace prev
+       $mod+Next workspace next
+
+       # Move focused container to workspace
+
+       $mod+Shift+1 move container to workspace $ws1
+       $mod+Shift+2 move container to workspace $ws2
+       $mod+Shift+3 move container to workspace $ws3
+       $mod+Shift+4 move container to workspace $ws4
+       $mod+Shift+5 move container to workspace $ws5
+       $mod+Shift+6 move container to workspace $ws6
+       $mod+Shift+7 move container to workspace $ws7
+       $mod+Shift+8 move container to workspace $ws8
+       $mod+Shift+9 move container to workspace $ws9
+       $mod+Shift+0 move container to workspace $ws10
+
+       ## Directional Focus ##
+
+       $mod+Left focus left
+       $mod+Down focus down
+       $mod+Up focus up
+       $mod+Right focus right
+
+       # Smart focus
+       # - Cycle focus right if current layout is tabbed / splith
+       # - Cycle focus down if current layout is stacked / splitv
+       # - change focus from floating to tiling layer otherwise
+
+       $mod+Tab exec $sway/smart-focus-change next
+
+       # Reverse direction with shift
+
+       $mod+Shift+Tab exec $sway/smart-focus-change prev
+
+       # Move by pixels
+
+       $mod+Shift+Left move left $move_px
+       $mod+Shift+Down move down $move_px
+       $mod+Shift+Up move up $move_px
+       $mod+Shift+Right move right $move_px
+
+       ## Smart split ##
+
+       # Will either splith or splitv depending on which container side is largest.
+
+       $mod+x exec "$sway/smart-split", $post_split
+
+       # Toggle splitv/splith with the same key
+
+       $mod+s layout toggle split, $post_split
+
+       # Toggle tabbed/stacked with the same key
+
+       $mod+w layout toggle tabbed stacking, $post_split
+
+       # Make the current focus fullscreen
+
+       $mod+f fullscreen
+
+       # Toggle the current focus between tiling and floating mode
+
+       $mod+Shift+space floating toggle
+
+       # Swap focus between the tiling area and the floating area
+
+       $mod+space focus mode_toggle
+
+       ## Scratchpad ##
+
+       # Sway has a "scratchpad", which is a bag of holding for windows.
+       # You can send windows there and get them back later.
+       # Move the currently focused window to the scratchpad
+
+       $mod+Shift+minus move scratchpad
+
+       # Show the next scratchpad window or hide the focused scratchpad window.
+       # If there are multiple scratchpad windows, this command cycles through them.
+
+       $mod+minus scratchpad show
+
+       # Move focus to the parent/child container
+
+       $mod+z focus parent
+       $mod+shift+z focus child
+
+       # Close
+
+       $mod+q kill
+       Mod1+F4 kill
+
+       # Tofi
+
+       $mod+d exec $menu
+
+       # Notifications
+
+       $mod+n exec "dunstctl close-all"
+       $mod+Shift+n exec "dunstctl close"
+       $mod+Control+n exec "dunstctl context"
+
+       # Screenshots
+
+       Print exec "grimshot --notify save output"
+       Shift+Print exec "grimshot --notify save window"
+       Control+Print exec "grimshot --notify copy output"
+       $mod+Control+Print exec "grimshot --notify copy window"
+
+       # Open last screenshot with image viewer
+
+       $mod+Print exec "cd $screenshots_dir && iv $(ls -t)"
+
+       # Open last screenshot with Gimp
+
+       $mod+Shift+Print exec "cd $screenshots_dir && gimp $(ls -t | head -n1)"
+
+       # Alternative screenshot keybinds
+
+       $mod+Shift+c exec "grimshot --notify save window"
+       $mod+Control+c exec "grimshot --notify copy window"
+
+       # Binding Modes
+
+       $mod+r mode "resize"
+
+   }  
+
+## Mousebinds ##
+
+       # Middle button - close
+
+       bindsym --border button2 kill
+       bindsym --whole-window $mod+button2 kill
+
+       # Side button - toggle floating
+
+       bindsym --border button9 floating toggle
+       bindsym --whole-window $mod+button9 floating toggle
+       
+       bindsym --whole-window {
+             $mod+button4 workspace prev
+             $mod+button5 workspace next
+       }
