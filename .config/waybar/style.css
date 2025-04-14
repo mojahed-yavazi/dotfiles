@@ -1,0 +1,151 @@
+@import "mocha.css";
+
+* {
+    border: 0;
+    font-family: "Iosevka Fixed", "Font Awesome 6 Pro", "Font Awesome 6 Brands" ;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+window#waybar {
+    border-radius: 12px;
+    background-color: alpha(@base, 0.30);
+}
+
+#workspaces {
+    background-color: alpha(@surface0, 0.75);
+    border: alpha(@base, 0.25) 0.7px solid;
+    border-radius: 14px;
+    margin: 5px 0px 5px 0px;
+    /*box-shadow: rgba(1, 1, 1, 0.0) 0px 0px 0px 0px;*/
+}
+
+#workspaces button {
+    border-radius: 0;
+    margin: 5px 3px;
+    padding: 6px 10px 7px 10px;
+    border-bottom: 0.5px transparent solid;
+    transition: all 0.3s ease-out;
+}
+
+#workspaces button:nth-child(1) {color: alpha(@peach, 0.85); padding-right: 5px; padding-left: 9px; margin-left: 10px;}
+#workspaces button:nth-child(2) {color: alpha(@green, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(3) {color: alpha(@rosewater, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(4) {color: alpha(@pink, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(5) {color: alpha(@sapphire, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(6) {color: alpha(@sky, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(7) {color: alpha(@red, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(8) {color: alpha(@mauve, 0.85); padding-right: 5px; padding-left: 9px;}
+#workspaces button:nth-child(9) {color: alpha(@teal, 0.85); padding-right: 5px; padding-left: 10px}
+#workspaces button:nth-child(10) {color: alpha(@blue, 0.85); padding-right: 4px; padding-left: 9px; margin-right: 10px;}
+
+#workspaces button.empty {
+    color: alpha(@text, 0.85);
+}
+
+#workspaces button.focused {
+     border-radius: 0;
+     border-bottom: 0.5px alpha(@text, 0.85) solid;
+     transition: all 0.3s ease-out;
+}
+
+#workspaces button:hover {
+    color: @surface2;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    background-color: transparent;
+    border-bottom: 0.5px transparent solid;
+    transition: all 0.2s ease-out;
+}
+
+
+#clock,
+#custom-brightness,
+#network,
+#wireplumber,
+#power-profiles-daemon,
+#language,
+#group-power {
+    padding: 5px 12px;
+    border-top: alpha(@base, 0.25) 0.7px solid;
+    border-bottom: alpha(@base, 0.25) 0.7px solid;
+    background-color: alpha(@surface0, 0.75);
+    color: alpha(@text, 0.85);
+    /*box-shadow: rgba(1, 1, 1, 0) 0 0px 0px 0px;*/
+    margin: 5px 0px;
+}
+
+/* -----------------------------------------------------------------------------
+   * Module styles
+   * -------------------------------------------------------------------------- */
+
+
+#clock {
+    border: alpha(@base, 0.25) 0.7px solid;
+    border-radius: 14px;
+    margin: 5px 8px;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#wireplumber {
+    border: alpha(@base, 0.25) 0.7px solid;
+    border-right: 0;
+    border-radius: 14px 0 0 14px;
+}
+
+
+#group-power {
+     border: alpha(@base, 0.25) 0.7px solid;
+     border-left: 0;
+     border-radius: 0 14px 14px 0;
+     margin-right: 10px;
+}
+
+#custom-profile {
+     color: @text;
+}
+
+#window * {
+    border-style: hidden;
+    margin-left: 10px;
+    /* margin-top:1px;
+      padding: 8px 1rem; */
+    margin-right: 50px;
+    color: alpha(@mauve, 0.85);
+    transition: all 0.3s ease-out;
+}
+
+
+#custom-profile,
+#custom-power,
+#custom-reboot,
+#custom-lock,
+#custom-quit {
+    margin: 0 10px;
+}
+
+#custom-power,
+#custom-reboot,
+#custom-lock,
+#custom-quit {
+    padding: 5px 10px;
+    margin: 1px 0px;
+    background: alpha(#393a4f, 0.87);
+    color: shade(@text, 0.99);
+}
+
+#custom-power {
+  border-radius: 0 14px 14px 0;
+}
+
+#custom-quit {
+   border-radius: 14px 0 0 14px;
+   padding-right: 5px;
+}
