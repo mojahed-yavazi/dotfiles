@@ -1,0 +1,66 @@
+window {
+    font-family: Iosevka Medium;
+    font-size: 16px;
+    color:  #cdd6f4; /* text */
+    /*background-color: #1e1e2e; */
+    background-image: image(url("/home/mojahed/catppuccin.png"));
+    background-size: cover;
+
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    color: transparent;
+    background-color: transparent;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s ease-in;
+    box-shadow: 0 0 10px 2px transparent;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+button:focus {
+    box-shadow: none;
+    background-size : 30%;
+}
+
+button:hover {
+    background-size: 35%;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
+    background-color: #cba6f7;
+    opacity: 0.8;
+    color: transparent;
+    transition: all 0.4s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.4s ease-in;
+}
+
+#shutdown {
+    background-image: image(url("./icons/power-mocha.png"));
+}
+#shutdown:hover {
+  background-image: image(url("./icons/power-hover.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout-mocha.png"));
+
+}
+#logout:hover {
+  background-image: image(url("./icons/logout-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart-mocha.png"));
+}
+#reboot:hover {
+  background-image: image(url("./icons/restart-hover.png"));
+}
+
+#lock {
+    background-image: image(url("./icons/lock-mocha.png"));
+}
+#lock:hover {
+  background-image: image(url("./icons/lock-hover.png"));
+}
