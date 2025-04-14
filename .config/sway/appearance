@@ -27,7 +27,7 @@
  
    layer_effects "waybar" blur enable; blur_xray disable; blur_ignore_transparent enable; shadows enable; corner_radius 14
    layer_effects "rofi" blur enable; blur_ignore_transparent enable; corner_radius 12
-   layer_effects "launcher" blur enable; blur_xray enable; blur_ignore_transparent enable; corner_radius 12
+   layer_effects "launcher" blur enable; blur_xray enable; blur_ignore_transparent enable
    layer_effects "notifications" blur enable; blur_xray disable; blur_ignore_transparent enable; shadows disable; corner_radius 12
    layer_effects "logout_dialog" blur enable; blur_ignore_transparent enable
    layer_effects "gtk-layer-shell" blur enable; blur_xray enable; blur_ignore_transparent enable; shadows enable; corner_radius 12
