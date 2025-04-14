@@ -1,9 +1,8 @@
 window {
     font-family: Iosevka Medium;
     font-size: 16px;
-    color:  #cdd6f4; /* text */
-    /*background-color: #1e1e2e; */
-    background-image: image(url("/home/mojahed/catppuccin.png"));
+    color:  #cdd6f4;
+    background-image: image(url("/home/mojahed/.local/share/lockscreen_wallpaper"));
     background-size: cover;
 
 }
